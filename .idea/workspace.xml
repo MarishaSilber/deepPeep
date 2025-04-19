@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4640c0d-6d4f-42fc-9004-817b9801314a" name="Changes" comment="first without venv">
-      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/app/readme.md" afterDir="false" />
+    <list default="true" id="e4640c0d-6d4f-42fc-9004-817b9801314a" name="Changes" comment="zero-level  server">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745060146492</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first without venv">
+      <option name="closed" value="true" />
+      <created>1745071526419</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1745071526419</updated>
+    </task>
+    <task id="LOCAL-00003" summary="zero-level  server">
+      <option name="closed" value="true" />
+      <created>1745071771527</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745071771527</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,6 +113,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first without venv" />
-    <option name="LAST_COMMIT_MESSAGE" value="first without venv" />
+    <MESSAGE value="zero-level  server" />
+    <option name="LAST_COMMIT_MESSAGE" value="zero-level  server" />
   </component>
 </project>
