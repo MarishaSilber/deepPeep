@@ -1,6 +1,30 @@
 {
-  "user1": [0.9, 0.2, 0.5, 0.1],
-  "user2": [0.3, 0.8, 0.1, 0.4],
-  "user3": [0.7, 0.5, 0.3, 0.2],
-  "user4": [0.2, 0.9, 0.0, 0.7]
+  "user1": {
+    "price_sensitivity": 0.8,
+    "location_importance": 0.3,
+    "room_size_pref": 0.7,
+    "amenities_importance": 0.4,
+    "public_transport_access": 0.2
+  },
+  "user2": {
+    "price_sensitivity": 0.5,
+    "location_importance": 0.9,
+    "room_size_pref": 0.3,
+    "amenities_importance": 0.6,
+    "public_transport_access": 0.8
+  },
+  "user3": {
+    "price_sensitivity": 0.7,
+    "location_importance": 0.4,
+    "room_size_pref": 0.6,
+    "amenities_importance": 0.5,
+    "public_transport_access": 0.3
+  },
+  "user4": {
+    "price_sensitivity": 0.1,
+    "location_importance": 0.2,
+    "room_size_pref": 0.8,
+    "amenities_importance": 0.3,
+    "public_transport_access": 0.1
+  }
 }
