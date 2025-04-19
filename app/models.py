@@ -12,7 +12,11 @@ class UserPreferences(Base):
     gender = Column(String, index=True)
     age = Column(Integer, index=True)
     educational_institution = Column(String, index=True)
-    max_walking_minutes = Column(Integer, index=True)
+    x = Column(Integer, index=True)
+    y = Column(Integer, index=True)
+    time = Column(Integer, index=True)
+
+
 
     # 2. Budget
     budget_mean = Column(Integer, index=True)  # Mu (средний)
