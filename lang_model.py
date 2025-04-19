@@ -1,13 +1,12 @@
 import requests
 import json
 
-# Настройки
-API_KEY = "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"  # Замените на ваш реальный API-ключ OpenRouter
+API_KEY = "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"
 MODEL = "google/gemini-pro"
 
-def calculate_compatibility(text1: str, text2: str) -> int:
+def calculate_compatibility(text1: str, text2: str) -> float:
     """
-    Принимает два текста, возвращает ТОЛЬКО число от 1 до 100.
+    Принимает два текста, возвращает число от 0 до 1.
     """
     prompt = f"""
     Оцени совместимость этих текстов ЦИФРОЙ от 1 до 100.
@@ -23,11 +22,8 @@ def calculate_compatibility(text1: str, text2: str) -> int:
         json={
             "model": MODEL,
             "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.1  # Минимизируем случайность
+            "temperature": 0.1
         }
     )
 
-    # Извлекаем чистое число из ответа
-    return int(response.json()['choices'][0]['message']['content'].strip())
-
-
+    return int(response.json()['choices'][0]['message']['content'].strip()) / 100
