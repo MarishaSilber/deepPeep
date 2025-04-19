@@ -67,8 +67,8 @@ def find_compatible_neighbors(data_file, target_user, n=3, top_features=2, compa
 if __name__ == "__main__":
     result = find_compatible_neighbors(
         data_file='users.json',
-        target_user="user1",
-        n=2,
+        target_user="user4",
+        n=4,
         top_features=1,
         compatibility_threshold=0.65
     )
