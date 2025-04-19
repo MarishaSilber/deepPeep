@@ -14,7 +14,7 @@ def load_user_descriptions(filename):
 
 def load_user_coords_and_time(filename, user_id):
     """
-    Загружает и возвращает все пространственно-временные данные пользователя в структурированном виде
+    Загружает и возвращает данные пользователя необходимые для расчета зоны проживания в структурированном виде
 
     Args:
         filename: Путь к JSON файлу
@@ -50,7 +50,7 @@ def find_compatible_neighbors(data_file, target_user, n=3, top_features=2, compa
     """
     Объединённая функция поиска совместимых соседей:
     1. Сначала находит ближайших соседей по числовым параметрам
-    2. Затем фильтрует их по текстовой совместимости
+    2. Затем фильтрует их по текстовой совместимости и по совпадению желаемых территорий проживания
     """
     # Загружаем данные
     user_vectors, feature_names = load_and_prepare_data(data_file)
@@ -119,9 +119,9 @@ def find_compatible_neighbors(data_file, target_user, n=3, top_features=2, compa
 if __name__ == "__main__":
     result = find_compatible_neighbors(
         data_file='users.json',
-        target_user="user13",
+        target_user="user10",
         n=2,
-        top_features=1,
+        top_features=0,
         compatibility_threshold=0.65
     )
 
