@@ -4,7 +4,7 @@ from lang_model import calculate_compatibility
 
 
 def load_user_descriptions(filename):
-    """Загружает описания пользователей из JSON файла"""
+    """Загружает только описания пользователей из JSON файла"""
     with open(filename, 'r') as f:
         data = json.load(f)
     return {user: features.get('description', '') for user, features in data.items()}
@@ -13,22 +13,22 @@ def load_user_descriptions(filename):
 def find_compatible_neighbors(data_file, target_user, n=3, top_features=2, compatibility_threshold=0.65):
     """
     Объединённая функция поиска совместимых соседей:
-    1. Сначала находит ближайших соседей по параметрам
+    1. Сначала находит ближайших соседей по числовым параметрам
     2. Затем фильтрует их по текстовой совместимости
     """
-    # Загружаем данные для KNN
+    # Загружаем данные
     user_vectors, feature_names = load_and_prepare_data(data_file)
     user_descriptions = load_user_descriptions(data_file)
 
     if target_user not in user_vectors:
         return {"error": f"User {target_user} not found in data"}
 
-    # Шаг 1: Поиск ближайших соседей по параметрам
+    # Шаг 1: Поиск ближайших соседей по числовым параметрам
     knn_results = find_nearest_neighbors_json(
         user_vectors,
         feature_names,
         target_user,
-        n=n * 3,  # Берем в 3 раза больше соседей для запаса
+        n=n * 3,  # Берем больше соседей для запаса
         top_features=top_features
     )
 
@@ -64,22 +64,13 @@ def find_compatible_neighbors(data_file, target_user, n=3, top_features=2, compa
     return result
 
 
-# Пример использования
 if __name__ == "__main__":
     result = find_compatible_neighbors(
         data_file='users.json',
-        target_user="user44",
-        n=4,
+        target_user="user1",
+        n=2,
         top_features=1,
         compatibility_threshold=0.65
     )
 
     print(json.dumps(result, indent=2, ensure_ascii=False))
-
-
-
-
-
-
-
-
