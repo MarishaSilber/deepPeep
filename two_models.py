@@ -1,6 +1,8 @@
 import json
 from knn import load_and_prepare_data, find_nearest_neighbors_json
 from lang_model import calculate_compatibility
+from zone_relation import calculate_coverage
+import time
 
 
 def load_user_descriptions(filename):
@@ -10,7 +12,41 @@ def load_user_descriptions(filename):
     return {user: features.get('description', '') for user, features in data.items()}
 
 
-def find_compatible_neighbors(data_file, target_user, n=3, top_features=2, compatibility_threshold=0.65):
+def load_user_coords_and_time(filename, user_id):
+    """
+    Загружает и возвращает все пространственно-временные данные пользователя в структурированном виде
+
+    Args:
+        filename: Путь к JSON файлу
+        user_id: ID пользователя
+
+    Returns:
+        dict: Словарь с данными вида {
+            'coords': (x, y),
+            'time': время,
+            'other_spatial_data': ...  # при необходимости можно добавить другие поля
+        } или None, если пользователь не найден
+    """
+    try:
+        with open(filename, 'r') as f:
+            data = json.load(f)
+
+        user_data = data.get(str(user_id))
+
+        if not user_data:
+            return None
+
+        return {
+            'coords': (user_data.get('x'), user_data.get('y')),
+            'time': user_data.get('time')
+        }
+
+    except (FileNotFoundError, json.JSONDecodeError):
+        return None
+
+
+def find_compatible_neighbors(data_file, target_user, n=3, top_features=2, compatibility_threshold=0.65,
+                              area_threshold=0.65):
     """
     Объединённая функция поиска совместимых соседей:
     1. Сначала находит ближайших соседей по числовым параметрам
@@ -44,7 +80,23 @@ def find_compatible_neighbors(data_file, target_user, n=3, top_features=2, compa
         neighbor_description = user_descriptions.get(neighbor_user, '')
 
         compatibility = calculate_compatibility(target_description, neighbor_description)
-        if compatibility >= compatibility_threshold:
+
+        # Получаем данные о местоположении и времени
+        target_data = load_user_coords_and_time(data_file, target_user)
+        neighbor_data = load_user_coords_and_time(data_file, neighbor_user)
+
+        # Проверяем, что данные существуют
+        if not target_data or not neighbor_data:
+            continue
+
+        area_data = calculate_coverage(
+            target_coords=target_data['coords'],
+            target_time=target_data['time'],
+            cand_coords=neighbor_data['coords'],
+            cand_time=neighbor_data['time']
+        )
+
+        if compatibility >= compatibility_threshold and area_data >= area_threshold:
             neighbor_with_compat = neighbor.copy()
             neighbor_with_compat["compatibility"] = round(compatibility, 4)
             compatible_neighbors.append(neighbor_with_compat)
@@ -67,8 +119,8 @@ def find_compatible_neighbors(data_file, target_user, n=3, top_features=2, compa
 if __name__ == "__main__":
     result = find_compatible_neighbors(
         data_file='users.json',
-        target_user="user4",
-        n=4,
+        target_user="user13",
+        n=2,
         top_features=1,
         compatibility_threshold=0.65
     )

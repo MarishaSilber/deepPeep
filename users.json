@@ -5,7 +5,10 @@
     "room_size_pref": 0.7,
     "amenities_importance": 0.4,
     "public_transport_access": 0.2,
-    "description": "Люблю тишину и порядок"
+    "description": "Люблю тишину и порядок",
+    "x": 37.5281,
+    "y": 55.7058,
+    "time": 15
   },
   "user2": {
     "price_sensitivity": 0.5,
@@ -13,7 +16,10 @@
     "room_size_pref": 0.3,
     "amenities_importance": 0.6,
     "public_transport_access": 0.8,
-    "description": "Обожаю вечеринки и шумные компании"
+    "description": "Обожаю вечеринки и шумные компании",
+    "x": 37.5350,
+    "y": 55.7010,
+    "time": 25
   },
   "user3": {
     "price_sensitivity": 0.7,
@@ -21,7 +27,10 @@
     "room_size_pref": 0.6,
     "amenities_importance": 0.5,
     "public_transport_access": 0.3,
-    "description": "Занимаюсь спортом"
+    "description": "Занимаюсь спортом",
+    "x": 37.5250,
+    "y": 55.7000,
+    "time": 20
   },
   "user4": {
     "price_sensitivity": 0.1,
@@ -29,7 +38,10 @@
     "room_size_pref": 0.8,
     "amenities_importance": 0.3,
     "public_transport_access": 0.1,
-    "description": "Играю на гитаре"
+    "description": "Играю на гитаре",
+    "x": 37.5400,
+    "y": 55.7080,
+    "time": 35
   },
   "user5": {
     "price_sensitivity": 0.6,
@@ -37,7 +49,10 @@
     "room_size_pref": 0.5,
     "amenities_importance": 0.7,
     "public_transport_access": 0.6,
-    "description": "Студент-медик, часто занимаюсь дома"
+    "description": "Студент-медик, часто занимаюсь дома",
+    "x": 37.5200,
+    "y": 55.7070,
+    "time": 18
   },
   "user6": {
     "price_sensitivity": 0.9,
@@ -45,7 +60,10 @@
     "room_size_pref": 0.4,
     "amenities_importance": 0.2,
     "public_transport_access": 0.4,
-    "description": "Фрилансер, работаю удаленно"
+    "description": "Фрилансер, работаю удаленно",
+    "x": 37.5320,
+    "y": 55.7090,
+    "time": 12
   },
   "user7": {
     "price_sensitivity": 0.3,
@@ -53,7 +71,10 @@
     "room_size_pref": 0.9,
     "amenities_importance": 0.8,
     "public_transport_access": 0.7,
-    "description": "Люблю принимать гостей"
+    "description": "Люблю принимать гостей",
+    "x": 37.5270,
+    "y": 55.7040,
+    "time": 22
   },
   "user8": {
     "price_sensitivity": 0.4,
@@ -61,7 +82,10 @@
     "room_size_pref": 0.5,
     "amenities_importance": 0.5,
     "public_transport_access": 0.5,
-    "description": "Спокойный и аккуратный"
+    "description": "Спокойный и аккуратный",
+    "x": 37.5380,
+    "y": 55.7020,
+    "time": 28
   },
   "user9": {
     "price_sensitivity": 0.7,
@@ -69,7 +93,10 @@
     "room_size_pref": 0.6,
     "amenities_importance": 0.4,
     "public_transport_access": 0.3,
-    "description": "Вегетарианец, люблю готовить"
+    "description": "Вегетарианец, люблю готовить",
+    "x": 37.5250,
+    "y": 55.7060,
+    "time": 17
   },
   "user10": {
     "price_sensitivity": 0.2,
@@ -77,7 +104,10 @@
     "room_size_pref": 0.7,
     "amenities_importance": 0.9,
     "public_transport_access": 0.8,
-    "description": "Люблю роскошь и комфорт"
+    "description": "Люблю роскошь и комфорт",
+    "x": 37.5330,
+    "y": 55.7005,
+    "time": 30
   },
   "user11": {
     "price_sensitivity": 0.5,
@@ -85,7 +115,10 @@
     "room_size_pref": 0.5,
     "amenities_importance": 0.3,
     "public_transport_access": 0.2,
-    "description": "Минималист, мало вещей"
+    "description": "Минималист, мало вещей",
+    "x": 37.5290,
+    "y": 55.7045,
+    "time": 14
   },
   "user12": {
     "price_sensitivity": 0.8,
@@ -93,7 +126,10 @@
     "room_size_pref": 0.8,
     "amenities_importance": 0.1,
     "public_transport_access": 0.1,
-    "description": "Часто в командировках"
+    "description": "Часто в командировках",
+    "x": 37.5420,
+    "y": 55.7050,
+    "time": 38
   },
   "user13": {
     "price_sensitivity": 0.6,
@@ -101,7 +137,10 @@
     "room_size_pref": 0.6,
     "amenities_importance": 0.6,
     "public_transport_access": 0.7,
-    "description": "Люблю читать книги"
+    "description": "Люблю читать книги",
+    "x": 37.5260,
+    "y": 55.7030,
+    "time": 19
   },
   "user14": {
     "price_sensitivity": 0.4,
@@ -109,7 +148,10 @@
     "room_size_pref": 0.4,
     "amenities_importance": 0.5,
     "public_transport_access": 0.6,
-    "description": "Занимаюсь йогой"
+    "description": "Занимаюсь йогой",
+    "x": 37.5310,
+    "y": 55.7070,
+    "time": 23
   },
   "user15": {
     "price_sensitivity": 0.9,
@@ -117,7 +159,10 @@
     "room_size_pref": 0.9,
     "amenities_importance": 0.2,
     "public_transport_access": 0.2,
-    "description": "Коллекционирую искусство"
+    "description": "Коллекционирую искусство",
+    "x": 37.5240,
+    "y": 55.7090,
+    "time": 40
   },
   "user16": {
     "price_sensitivity": 0.3,
@@ -125,7 +170,10 @@
     "room_size_pref": 0.3,
     "amenities_importance": 0.7,
     "public_transport_access": 0.9,
-    "description": "Активный ночной образ жизни"
+    "description": "Активный ночной образ жизни",
+    "x": 37.5370,
+    "y": 55.7015,
+    "time": 32
   },
   "user17": {
     "price_sensitivity": 0.7,
@@ -133,7 +181,10 @@
     "room_size_pref": 0.7,
     "amenities_importance": 0.4,
     "public_transport_access": 0.4,
-    "description": "Работаю в IT"
+    "description": "Работаю в IT",
+    "x": 37.5230,
+    "y": 55.7020,
+    "time": 16
   },
   "user18": {
     "price_sensitivity": 0.5,
@@ -141,7 +192,10 @@
     "room_size_pref": 0.5,
     "amenities_importance": 0.6,
     "public_transport_access": 0.5,
-    "description": "Люблю животных"
+    "description": "Люблю животных",
+    "x": 37.5390,
+    "y": 55.7060,
+    "time": 27
   },
   "user19": {
     "price_sensitivity": 0.2,
@@ -149,7 +203,10 @@
     "room_size_pref": 0.2,
     "amenities_importance": 0.8,
     "public_transport_access": 0.8,
-    "description": "Часто принимаю гостей"
+    "description": "Часто принимаю гостей",
+    "x": 37.5340,
+    "y": 55.7035,
+    "time": 29
   },
   "user20": {
     "price_sensitivity": 0.8,
@@ -157,7 +214,10 @@
     "room_size_pref": 0.8,
     "amenities_importance": 0.3,
     "public_transport_access": 0.3,
-    "description": "Люблю порядок и чистоту"
+    "description": "Люблю порядок и чистоту",
+    "x": 37.5210,
+    "y": 55.7050,
+    "time": 21
   },
   "user21": {
     "price_sensitivity": 0.6,
@@ -165,7 +225,10 @@
     "room_size_pref": 0.6,
     "amenities_importance": 0.5,
     "public_transport_access": 0.5,
-    "description": "Увлекаюсь фотографией"
+    "description": "Увлекаюсь фотографией",
+    "x": 37.5360,
+    "y": 55.7040,
+    "time": 24
   },
   "user22": {
     "price_sensitivity": 0.4,
@@ -173,7 +236,10 @@
     "room_size_pref": 0.4,
     "amenities_importance": 0.7,
     "public_transport_access": 0.7,
-    "description": "Люблю готовить сложные блюда"
+    "description": "Люблю готовить сложные блюда",
+    "x": 37.5220,
+    "y": 55.7080,
+    "time": 33
   },
   "user23": {
     "price_sensitivity": 0.9,
@@ -181,7 +247,10 @@
     "room_size_pref": 0.9,
     "amenities_importance": 0.2,
     "public_transport_access": 0.2,
-    "description": "Работаю из дома"
+    "description": "Работаю из дома",
+    "x": 37.5410,
+    "y": 55.7030,
+    "time": 37
   },
   "user24": {
     "price_sensitivity": 0.3,
@@ -189,7 +258,10 @@
     "room_size_pref": 0.3,
     "amenities_importance": 0.8,
     "public_transport_access": 0.8,
-    "description": "Люблю музыку"
+    "description": "Люблю музыку",
+    "x": 37.5295,
+    "y": 55.7015,
+    "time": 26
   },
   "user25": {
     "price_sensitivity": 0.7,
@@ -197,7 +269,10 @@
     "room_size_pref": 0.7,
     "amenities_importance": 0.4,
     "public_transport_access": 0.4,
-    "description": "Занимаюсь рукоделием"
+    "description": "Занимаюсь рукоделием",
+    "x": 37.5275,
+    "y": 55.7075,
+    "time": 18
   },
   "user26": {
     "price_sensitivity": 0.5,
@@ -205,7 +280,10 @@
     "room_size_pref": 0.5,
     "amenities_importance": 0.6,
     "public_transport_access": 0.6,
-    "description": "Люблю спорт"
+    "description": "Люблю спорт",
+    "x": 37.5355,
+    "y": 55.7055,
+    "time": 22
   },
   "user27": {
     "price_sensitivity": 0.1,
@@ -213,7 +291,10 @@
     "room_size_pref": 0.1,
     "amenities_importance": 0.9,
     "public_transport_access": 0.9,
-    "description": "Часто путешествую"
+    "description": "Часто путешествую",
+    "x": 37.5305,
+    "y": 55.7025,
+    "time": 31
   },
   "user28": {
     "price_sensitivity": 0.8,
@@ -221,7 +302,10 @@
     "room_size_pref": 0.8,
     "amenities_importance": 0.3,
     "public_transport_access": 0.3,
-    "description": "Люблю читать"
+    "description": "Люблю читать",
+    "x": 37.5245,
+    "y": 55.7045,
+    "time": 20
   },
   "user29": {
     "price_sensitivity": 0.6,
@@ -229,7 +313,10 @@
     "room_size_pref": 0.6,
     "amenities_importance": 0.5,
     "public_transport_access": 0.5,
-    "description": "Учу иностранные языки"
+    "description": "Учу иностранные языки",
+    "x": 37.5385,
+    "y": 55.7075,
+    "time": 28
   },
   "user30": {
     "price_sensitivity": 0.4,
@@ -237,7 +324,10 @@
     "room_size_pref": 0.4,
     "amenities_importance": 0.7,
     "public_transport_access": 0.7,
-    "description": "Люблю кино"
+    "description": "Люблю кино",
+    "x": 37.5265,
+    "y": 55.7010,
+    "time": 25
   },
   "user31": {
     "price_sensitivity": 0.9,
@@ -245,7 +335,10 @@
     "room_size_pref": 0.9,
     "amenities_importance": 0.2,
     "public_transport_access": 0.2,
-    "description": "Коллекционирую винил"
+    "description": "Коллекционирую винил",
+    "x": 37.5325,
+    "y": 55.7085,
+    "time": 36
   },
   "user32": {
     "price_sensitivity": 0.3,
@@ -253,7 +346,10 @@
     "room_size_pref": 0.3,
     "amenities_importance": 0.8,
     "public_transport_access": 0.8,
-    "description": "Люблю театр"
+    "description": "Люблю театр",
+    "x": 37.5215,
+    "y": 55.7035,
+    "time": 34
   },
   "user33": {
     "price_sensitivity": 0.7,
@@ -261,7 +357,10 @@
     "room_size_pref": 0.7,
     "amenities_importance": 0.4,
     "public_transport_access": 0.4,
-    "description": "Занимаюсь живописью"
+    "description": "Занимаюсь живописью",
+    "x": 37.5375,
+    "y": 55.7045,
+    "time": 19
   },
   "user34": {
     "price_sensitivity": 0.5,
@@ -269,7 +368,10 @@
     "room_size_pref": 0.5,
     "amenities_importance": 0.6,
     "public_transport_access": 0.6,
-    "description": "Люблю природу"
+    "description": "Люблю природу",
+    "x": 37.5235,
+    "y": 55.7065,
+    "time": 23
   },
   "user35": {
     "price_sensitivity": 0.2,
@@ -277,7 +379,10 @@
     "room_size_pref": 0.2,
     "amenities_importance": 0.9,
     "public_transport_access": 0.9,
-    "description": "Часто бываю на концертах"
+    "description": "Часто бываю на концертах",
+    "x": 37.5395,
+    "y": 55.7025,
+    "time": 30
   },
   "user36": {
     "price_sensitivity": 0.8,
@@ -285,7 +390,10 @@
     "room_size_pref": 0.8,
     "amenities_importance": 0.3,
     "public_transport_access": 0.3,
-    "description": "Люблю тишину"
+    "description": "Люблю тишину",
+    "x": 37.5255,
+    "y": 55.7020,
+    "time": 17
   },
   "user37": {
     "price_sensitivity": 0.6,
@@ -293,7 +401,10 @@
     "room_size_pref": 0.6,
     "amenities_importance": 0.5,
     "public_transport_access": 0.5,
-    "description": "Увлекаюсь астрономией"
+    "description": "Увлекаюсь астрономией",
+    "x": 37.5345,
+    "y": 55.7065,
+    "time": 26
   },
   "user38": {
     "price_sensitivity": 0.4,
@@ -301,7 +412,10 @@
     "room_size_pref": 0.4,
     "amenities_importance": 0.7,
     "public_transport_access": 0.7,
-    "description": "Люблю готовить"
+    "description": "Люблю готовить",
+    "x": 37.5285,
+    "y": 55.7005,
+    "time": 24
   },
   "user39": {
     "price_sensitivity": 0.9,
@@ -309,7 +423,10 @@
     "room_size_pref": 0.9,
     "amenities_importance": 0.2,
     "public_transport_access": 0.2,
-    "description": "Работаю в офисе"
+    "description": "Работаю в офисе",
+    "x": 37.5405,
+    "y": 55.7040,
+    "time": 39
   },
   "user40": {
     "price_sensitivity": 0.3,
@@ -317,7 +434,10 @@
     "room_size_pref": 0.3,
     "amenities_importance": 0.8,
     "public_transport_access": 0.8,
-    "description": "Люблю танцевать"
+    "description": "Люблю танцевать",
+    "x": 37.5225,
+    "y": 55.7070,
+    "time": 29
   },
   "user41": {
     "price_sensitivity": 0.7,
@@ -325,7 +445,10 @@
     "room_size_pref": 0.7,
     "amenities_importance": 0.4,
     "public_transport_access": 0.4,
-    "description": "Занимаюсь музыкой"
+    "description": "Занимаюсь музыкой",
+    "x": 37.5365,
+    "y": 55.7030,
+    "time": 21
   },
   "user42": {
     "price_sensitivity": 0.5,
@@ -333,7 +456,10 @@
     "room_size_pref": 0.5,
     "amenities_importance": 0.6,
     "public_transport_access": 0.6,
-    "description": "Люблю путешествия"
+    "description": "Люблю путешествия",
+    "x": 37.5290,
+    "y": 55.7095,
+    "time": 27
   },
   "user43": {
     "price_sensitivity": 0.1,
@@ -341,7 +467,10 @@
     "room_size_pref": 0.1,
     "amenities_importance": 0.9,
     "public_transport_access": 0.9,
-    "description": "Часто бываю в театре"
+    "description": "Часто бываю в театре",
+    "x": 37.5315,
+    "y": 55.7015,
+    "time": 35
   },
   "user44": {
     "price_sensitivity": 0.8,
@@ -349,7 +478,10 @@
     "room_size_pref": 0.8,
     "amenities_importance": 0.3,
     "public_transport_access": 0.3,
-    "description": "Люблю спокойствие"
+    "description": "Люблю спокойствие",
+    "x": 37.5270,
+    "y": 55.7085,
+    "time": 16
   },
   "user45": {
     "price_sensitivity": 0.6,
@@ -357,7 +489,10 @@
     "room_size_pref": 0.6,
     "amenities_importance": 0.5,
     "public_transport_access": 0.5,
-    "description": "Увлекаюсь наукой"
+    "description": "Увлекаюсь наукой",
+    "x": 37.5335,
+    "y": 55.7050,
+    "time": 22
   },
   "user46": {
     "price_sensitivity": 0.4,
@@ -365,7 +500,10 @@
     "room_size_pref": 0.4,
     "amenities_importance": 0.7,
     "public_transport_access": 0.7,
-    "description": "Люблю пробовать новую еду"
+    "description": "Люблю пробовать новую еду",
+    "x": 37.5240,
+    "y": 55.7000,
+    "time": 31
   },
   "user47": {
     "price_sensitivity": 0.9,
@@ -373,7 +511,10 @@
     "room_size_pref": 0.9,
     "amenities_importance": 0.2,
     "public_transport_access": 0.2,
-    "description": "Работаю в сфере искусства"
+    "description": "Работаю в сфере искусства",
+    "x": 37.5380,
+    "y": 55.7080,
+    "time": 38
   },
   "user48": {
     "price_sensitivity": 0.3,
@@ -381,7 +522,10 @@
     "room_size_pref": 0.3,
     "amenities_importance": 0.8,
     "public_transport_access": 0.8,
-    "description": "Люблю моду"
+    "description": "Люблю моду",
+    "x": 37.5260,
+    "y": 55.7055,
+    "time": 28
   },
   "user49": {
     "price_sensitivity": 0.7,
@@ -389,7 +533,10 @@
     "room_size_pref": 0.7,
     "amenities_importance": 0.4,
     "public_transport_access": 0.4,
-    "description": "Занимаюсь дизайном"
+    "description": "Занимаюсь дизайном",
+    "x": 37.5350,
+    "y": 55.7070,
+    "time": 20
   },
   "user50": {
     "price_sensitivity": 0.5,
@@ -397,6 +544,9 @@
     "room_size_pref": 0.5,
     "amenities_importance": 0.6,
     "public_transport_access": 0.6,
-    "description": "Люблю активный отдых"
+    "description": "Люблю активный отдых",
+    "x": 37.5300,
+    "y": 55.7060,
+    "time": 25
   }
 }

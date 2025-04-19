@@ -5,15 +5,15 @@ from collections import defaultdict
 
 
 def load_and_prepare_data(filename):
-    """Загружает JSON и преобразует в формат {user: vector}, игнорируя текстовые поля"""
+    """Загружает JSON и преобразует в формат {user: vector}, игнорируя текстовые поля и x/y/time"""
     with open(filename, 'r') as f:
         raw_data = json.load(f)
 
-    # Определяем числовые признаки (исключаем нечисловые поля как 'description')
+    # Определяем числовые признаки (исключаем нечисловые поля и x/y/time)
     first_user_features = next(iter(raw_data.values()))
     feature_names = sorted(
         key for key, value in first_user_features.items()
-        if isinstance(value, (int, float))
+        if isinstance(value, (int, float)) and key not in ["x", "y", "time"]
     )
 
     user_vectors = {}
@@ -73,6 +73,7 @@ def find_nearest_neighbors_json(data, feature_names, target_user, n=3, top_featu
     results["neighbors"] = neighbors_sorted
 
     total_pairs = len(neighbors_temp)
+
     if total_pairs > 0:
         common_features = sorted(feature_counter.items(), key=lambda x: x[1], reverse=True)
         results["feature_importances"]["most_common_features"] = [f[0] for f in common_features[:3]]
