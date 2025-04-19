@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomMate - Найди идеального соседа</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1 class="header__title">RoomMate</h1>
+            <p class="header__subtitle">Найди своего идеального соседа</p>
+        </header>
+
+        <main class="content">
+            <button class="cta-button pulse-animation" id="searchBtn">Начать поиск →</button>
+            
+            <section class="about-section slide-up">
+                <h3>О себе</h3>
+                <textarea id="aboutText" maxlength="3000" placeholder="Введи описание себя и как выглядит твой идеальный сосед:)"></textarea>
+            </section>
+
+            <div class="auth-buttons">
+                <button class="auth-button" id="loginBtn">Вход</button>
+                <button class="auth-button" id="registerBtn">Регистрация</button>
+            </div>
+
+            <section class="search-section">
+                <h2>Параметры поиска</h2>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>made by PuerTeam</p>
+        </footer>
+    </div>
+
+    <!-- Модальное окно параметров поиска -->
+    <div class="modal-overlay" id="paramsModal">
+        <div class="modal-container slide-up">
+            <div class="modal-header">
+                <h2>Параметры поиска</h2>
+                <span class="close-modal" id="closeParams">&times;</span>
+            </div>
+            <div class="modal-content" id="paramsContent"></div>
+            <button class="save-btn" id="saveParams">Сохранить</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно регистрации -->
+    <div class="modal-overlay" id="registerModal">
+        <div class="registration-modal">
+            <div class="registration-header">
+                <h2>Регистрация</h2>
+            </div>
+            
+            <div class="registration-background">
+                <form class="registration-form">
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label>ФИО</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row paired-fields">
+                        <div class="form-group">
+                            <label>Пол</label>
+                            <select required>
+                                <option value="" disabled selected>Выберите</option>
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Возраст</label>
+                            <input type="number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label>Учебное заведение</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label>E-mail</label>
+                            <input type="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label>Пароль</label>
+                            <input type="password" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row submit-row">
+                        <button type="submit" class="submit-btn">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно входа -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-container slide-up">
+            <div class="modal-header">
+                <h2>Вход</h2>
+                <span class="close-modal" id="closeLogin">&times;</span>
+            </div>
+            <form class="modal-form" id="loginForm">
+                <div class="form-group">
+                    <input type="email" placeholder="E-mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Пароль" required>
+                </div>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
