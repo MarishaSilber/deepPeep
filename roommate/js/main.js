@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const paramsGrid = document.getElementById('parametersGrid');
     const saveSearchParamsBtn = document.getElementById('saveSearchParams');
     
-    
     // Параметры для поиска (шкала 0-10)
     const searchParams = [
         { id: 'cleanliness', name: 'Чистоплотность', min: 0, max: 10, step: 1, value: 5 },
@@ -115,15 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             searchParameters.classList.remove('active');
             toggleParamsBtn.classList.remove('active');
-        }, 2000); // Закроется через 2 секунды
+        }, 2000);
     });
     
     // Отправляем данные на сервер
     searchBtn.addEventListener('click', function() {
-        // Сохраняем описание
         localStorage.setItem('roommate_about', aboutText.value);
         
-        // Собираем все данные
         const formData = {
             about: aboutText.value,
             searchParams: {}
@@ -133,10 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.searchParams[param.id] = param.value;
         });
         
-        // Здесь должна быть отправка данных на сервер
         console.log('Данные для отправки:', formData);
         
-        // Эффект успешного сохранения
         this.classList.add('success-pulse');
         setTimeout(() => {
             this.classList.remove('success-pulse');
@@ -165,14 +160,14 @@ document.addEventListener('DOMContentLoaded', function() {
     registerBtn.addEventListener('click', () => {
         registerModal.style.display = 'flex';
     });
+    
     if (registrationForm) {
         registrationForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            // Здесь можно добавить обработку данных формы
             registerModal.style.display = 'none';
         });
     }
-});
+    
     window.addEventListener('click', (e) => {
         if (e.target === loginModal) {
             loginModal.style.display = 'none';
@@ -181,5 +176,4 @@ document.addEventListener('DOMContentLoaded', function() {
             registerModal.style.display = 'none';
         }
     });
-
-
+});

@@ -112,7 +112,6 @@ body {
     color: var(--color-secondary);
 }
 
-/* Updated Search Section Styles */
 .search-section {
     width: 80%;
     max-width: 800px;
@@ -279,6 +278,8 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
 }
 
 .modal-container {
@@ -290,6 +291,7 @@ body {
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     animation: fadeIn 0.4s ease;
+    margin: auto;
 }
 
 .modal-header {
@@ -340,6 +342,120 @@ body {
     background-color: var(--color-secondary);
 }
 
+/* Стили для модального окна регистрации */
+.registration-modal {
+    position: relative;
+    width: 773px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.registration-header {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-header h2 {
+    font-family: 'Source Serif Pro';
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 1.2;
+    color: #D2CBB2;
+    margin: 0;
+}
+
+.registration-background {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 140px 40px 40px;
+    background-color: #fff;
+    background-image: url('../assets/images/registration-bg.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.paired-fields {
+    flex-direction: row;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    flex: 0 0 100%;
+}
+
+.form-group label {
+    font-family: 'Source Serif Pro';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #373B33;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 16px;
+    border: 1px solid #A3A29E;
+    border-radius: 15px;
+    font-size: 16px;
+    background-color: rgba(239, 239, 239, 0.8);
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+.submit-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.registration-modal::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    left: 0;
+    top: 0;
+    background: rgba(90, 98, 83, 0.55);
+    border-radius: 28px 28px 0 0;
+    z-index: 1;
+}
+
 /* Адаптивность */
 @media (max-width: 800px) {
     .main-container {
@@ -375,170 +491,36 @@ body {
     .parameters-grid {
         grid-template-columns: 1fr;
     }
-}
-/* Добавьте эти стили в конец файла style.css */
 
-/* Стили для модального окна регистрации */
-.registration-modal {
-    position: relative;
-    width: 773px;
-    height: 889px;
-    margin: 40px auto;
-}
-
-.registration-header {
-    position: absolute;
-    width: 582px;
-    height: 120px;
-    left: 96px;
-    top: 0;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.registration-header h2 {
-    font-family: 'Source Serif Pro';
-    font-weight: 400;
-    font-size: 96px;
-    line-height: 120px;
-    color: #D2CBB2;
-    margin: 0;
-}
-
-.registration-background {
-    position: absolute;
-    width: 773px;
-    height: 822px;
-    left: 0;
-    top: 67px;
-    background-color: #fff;
-    background-image: url('../assets/images/registration-bg.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 28px;
-    padding: 180px 60px 60px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.registration-form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.form-row {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.paired-fields {
-    flex-direction: row;
-    gap: 40px;
-}
-
-.form-group {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.form-group.full-width {
-    flex: 0 0 100%;
-}
-
-.form-group label {
-    font-family: 'Source Serif Pro';
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 40px;
-    color: #373B33;
-}
-
-.form-group input,
-.form-group select {
-    padding: 15px 20px;
-    border: 1px solid #A3A29E;
-    border-radius: 19px;
-    font-size: 18px;
-    background-color: rgba(239, 239, 239, 0.8);
-}
-
-.form-group select {
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 20px;
-}
-
-.submit-row {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.submit-btn {
-    background-color: #7C8D7B;
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.registration-modal::before {
-    content: '';
-    position: absolute;
-    width: 773px;
-    height: 120px;
-    left: 0;
-    top: 0;
-    background: rgba(90, 98, 83, 0.55);
-    border-radius: 28px;
-    z-index: 1;
-}
-
-/* Адаптивность для регистрации */
-@media (max-width: 800px) {
-    .registration-modal {
-        width: 95%;
-        height: auto;
-    }
-
-    .registration-header {
-        width: 100%;
-        left: 0;
-        padding: 0 20px;
-    }
-
+    /* Адаптивность для регистрации */
     .registration-header h2 {
-        font-size: 48px;
-        line-height: 1.2;
+        font-size: 36px;
     }
 
     .registration-background {
-        width: 100%;
-        height: auto;
-        position: relative;
-        top: 0;
-        padding: 120px 20px 40px;
+        padding: 100px 20px 30px;
     }
 
     .paired-fields {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
     }
 
-    .registration-modal::before {
-        width: 100%;
+    .form-group label {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .registration-header h2 {
+        font-size: 28px;
+    }
+    
+    .form-group label {
+        font-size: 18px;
+    }
+    
+    .registration-background {
+        padding: 80px 15px 25px;
     }
 }
