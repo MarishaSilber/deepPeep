@@ -1,4 +1,4 @@
-/* Анимации */
+/* animations.css */
 .pulse-animation {
     animation: pulse 2s infinite;
 }
@@ -43,6 +43,53 @@
     }
     to {
         opacity: 1;
+    }
+}
+
+.slide-down {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.parameter-item {
+    animation: fadeInUp 0.4s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-pulse {
+    animation: successPulse 1s ease;
+}
+
+@keyframes successPulse {
+    0% {
+        background-color: var(--color-primary);
+    }
+    50% {
+        background-color: #5a8d5a;
+    }
+    100% {
+        background-color: var(--color-primary);
     }
 }
 
