@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="parameter-value">${param.value}</span>
                 </label>
                 <input type="range" id="${param.id}" 
-                       min="${param.min}" max="${param.max}" 
-                       step="${param.step}" value="${param.value}">
+                    min="${param.min}" max="${param.max}" 
+                    step="${param.step}" value="${param.value}">
                 <div class="range-labels">
                     <span>0</span>
                     <span>10</span>
@@ -164,4 +164,21 @@ document.addEventListener('DOMContentLoaded', function() {
             loginModal.style.display = 'none';
         }
     });
+});
+const registerBtn = document.getElementById('registerBtn');
+const registerModal = document.getElementById('registerModal');
+const closeRegister = document.getElementById('closeRegister');
+
+registerBtn.addEventListener('click', () => {
+    registerModal.style.display = 'flex';
+});
+
+closeRegister.addEventListener('click', () => {
+    registerModal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === registerModal) {
+        registerModal.style.display = 'none';
+    }
 });
