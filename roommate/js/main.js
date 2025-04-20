@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const paramsGrid = document.getElementById('parametersGrid');
     const saveSearchParamsBtn = document.getElementById('saveSearchParams');
     
+    
     // Параметры для поиска (шкала 0-10)
     const searchParams = [
         { id: 'cleanliness', name: 'Чистоплотность', min: 0, max: 10, step: 1, value: 5 },
@@ -112,9 +113,9 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.backgroundColor = '#5a8d5a';
         
         setTimeout(() => {
-            this.textContent = 'Сохранить параметры';
-            this.style.backgroundColor = 'var(--color-primary)';
-        }, 2000);
+            searchParameters.classList.remove('active');
+            toggleParamsBtn.classList.remove('active');
+        }, 2000); // Закроется через 2 секунды
     });
     
     // Отправляем данные на сервер
@@ -150,7 +151,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const registerBtn = document.getElementById('registerBtn');
     const loginModal = document.getElementById('loginModal');
     const closeLogin = document.getElementById('closeLogin');
-    
+    const registerModal = document.getElementById('registerModal');
+    const registrationForm = document.querySelector('.registration-form');
+
     loginBtn.addEventListener('click', () => {
         loginModal.style.display = 'flex';
     });
@@ -158,27 +161,25 @@ document.addEventListener('DOMContentLoaded', function() {
     closeLogin.addEventListener('click', () => {
         loginModal.style.display = 'none';
     });
-    
+
+    registerBtn.addEventListener('click', () => {
+        registerModal.style.display = 'flex';
+    });
+    if (registrationForm) {
+        registrationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Здесь можно добавить обработку данных формы
+            registerModal.style.display = 'none';
+        });
+    }
+});
     window.addEventListener('click', (e) => {
         if (e.target === loginModal) {
             loginModal.style.display = 'none';
         }
+        if (e.target === registerModal) {
+            registerModal.style.display = 'none';
+        }
     });
-});
-const registerBtn = document.getElementById('registerBtn');
-const registerModal = document.getElementById('registerModal');
-const closeRegister = document.getElementById('closeRegister');
 
-registerBtn.addEventListener('click', () => {
-    registerModal.style.display = 'flex';
-});
 
-closeRegister.addEventListener('click', () => {
-    registerModal.style.display = 'none';
-});
-
-window.addEventListener('click', (e) => {
-    if (e.target === registerModal) {
-        registerModal.style.display = 'none';
-    }
-});
