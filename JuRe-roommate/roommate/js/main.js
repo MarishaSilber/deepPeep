@@ -167,3 +167,121 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
+// 1. Сначала добавим модальное окно регистрации в HTML через JS (если его нет в HTML)
+document.addEventListener('DOMContentLoaded', function() {
+    // Проверяем, есть ли уже модальное окно регистрации
+    if (!document.getElementById('registerModal')) {
+        const registerModalHTML = `
+        <div class="modal-overlay" id="registerModal">
+            <div class="modal-container slide-up">
+                <div class="modal-header">
+                    <h2>Регистрация</h2>
+                    <span class="close-modal" id="closeRegister">&times;</span>
+                </div>
+                <form class="modal-form" id="registerForm">
+                    <div class="form-group">
+                        <input type="text" id="regName" placeholder="Имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="regEmail" placeholder="E-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="regPassword" placeholder="Пароль" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="regPasswordConfirm" placeholder="Повторите пароль" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="regCity" placeholder="Город">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="regAge" placeholder="Возраст" min="18" max="99">
+                    </div>
+                    <button type="submit" class="submit-btn">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+        `;
+        
+        document.body.insertAdjacentHTML('beforeend', registerModalHTML);
+    }
+
+    // 2. Обработчики для открытия/закрытия модального окна регистрации
+    const registerBtn = document.getElementById('registerBtn');
+    const registerModal = document.getElementById('registerModal');
+    const closeRegister = document.getElementById('closeRegister');
+
+    if (registerBtn && registerModal) {
+        registerBtn.addEventListener('click', function() {
+            registerModal.style.display = 'flex';
+        });
+    }
+
+    if (closeRegister) {
+        closeRegister.addEventListener('click', function() {
+            registerModal.style.display = 'none';
+        });
+    }
+
+    // 3. Обработчик отправки формы регистрации
+    const registerForm = document.getElementById('registerForm');
+    if (registerForm) {
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Получаем данные из формы
+            const userData = {
+                name: document.getElementById('regName').value,
+                email: document.getElementById('regEmail').value,
+                password: document.getElementById('regPassword').value,
+                city: document.getElementById('regCity').value,
+                age: document.getElementById('regAge').value,
+                about: document.getElementById('aboutText').value // добавляем текст из секции "О себе"
+            };
+            
+            // Проверяем совпадение паролей
+            const passwordConfirm = document.getElementById('regPasswordConfirm').value;
+            if (userData.password !== passwordConfirm) {
+                alert('Пароли не совпадают!');
+                return;
+            }
+            
+            // Отправляем данные на сервер
+            sendRegistrationData(userData);
+        });
+    }
+});
+
+// 4. Функция для отправки данных на сервер
+function sendRegistrationData(userData) {
+    // URL вашего Python-сервера
+    const apiUrl = 'http://KIRILL-ADD.com/api/register';
+    
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Ошибка сети');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Успешная регистрация:', data);
+        // Закрываем модальное окно после успешной регистрации
+        document.getElementById('registerModal').style.display = 'none';
+        // Можно показать сообщение об успехе
+        alert('Регистрация прошла успешно!');
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
+        alert('Произошла ошибка при регистрации: ' + error.message);
+    });
+}
