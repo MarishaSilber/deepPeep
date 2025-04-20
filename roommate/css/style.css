@@ -1,3 +1,4 @@
+/* style.css */
 :root {
     --color-bg: #D2CBB2;
     --color-primary: #7C8D7B;
@@ -111,15 +112,152 @@ body {
     color: var(--color-secondary);
 }
 
+/* Updated Search Section Styles */
 .search-section {
     width: 80%;
     max-width: 800px;
     text-align: center;
+    position: relative;
 }
 
 .search-section h2 {
-    font-size: 32px;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 65px;
+    color: var(--color-dark);
     margin-bottom: 20px;
+}
+
+.toggle-parameters {
+    position: relative;
+    width: 564px;
+    height: 150px;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0) 60.51%, #D9D9D9 78.22%);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    color: var(--color-dark);
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+    margin: 0 auto;
+}
+
+.toggle-parameters:hover {
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.1) 60.51%, #D9D9D9 78.22%);
+}
+
+.toggle-parameters::after {
+    content: '▼';
+    position: absolute;
+    bottom: 20px;
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.toggle-parameters.active::after {
+    transform: rotate(180deg);
+}
+
+.search-parameters {
+    display: none;
+    width: 100%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.search-parameters.active {
+    display: block;
+}
+
+.parameters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.parameter-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.parameter-item label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: var(--color-dark);
+}
+
+.parameter-item input[type="range"] {
+    width: 100%;
+    height: 43px;
+    -webkit-appearance: none;
+    background: var(--color-primary);
+    border-radius: 30px;
+    outline: none;
+    margin: 15px 0;
+    padding: 0 10px;
+}
+
+.parameter-item input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background: var(--color-dark);
+    border: 3px solid var(--color-dark);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.2s;
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 16px;
+    color: var(--color-dark);
+}
+
+.parameter-value {
+    font-weight: bold;
+    color: var(--color-primary);
+    min-width: 30px;
+    text-align: right;
+    font-size: 18px;
+}
+
+.save-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.save-btn:hover {
+    background-color: var(--color-secondary);
 }
 
 .footer {
@@ -153,193 +291,6 @@ body {
     position: relative;
 }
 
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.modal-header h2 {
-    font-size: 28px;
-    color: var(--color-dark);
-}
-
-.close-modal {
-    font-size: 28px;
-    cursor: pointer;
-    color: var(--color-light);
-    transition: color 0.3s;
-}
-
-.close-modal:hover {
-    color: var(--color-dark);
-}
-
-.modal-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.modal-form .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.modal-form .form-group input {
-    padding: 12px 15px;
-    border: 1px solid var(--color-light);
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-.submit-btn, .save-btn {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-.submit-btn:hover, .save-btn:hover {
-    background-color: var(--color-secondary);
-}
-
-/* Стили формы регистрации */
-.registration-modal {
-    position: relative;
-    width: 773px;
-    height: 889px;
-    margin: 40px auto;
-}
-
-.registration-header {
-    position: absolute;
-    width: 582px;
-    height: 120px;
-    left: 96px;
-    top: 0;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.registration-header h2 {
-    font-family: 'Source Serif Pro';
-    font-weight: 400;
-    font-size: 96px;
-    line-height: 120px;
-    color: #D2CBB2;
-    margin: 0;
-}
-
-.registration-background {
-    position: absolute;
-    width: 773px;
-    height: 822px;
-    left: 0;
-    top: 67px;
-    background-color: #fff;
-    background-image: url('../assets/images/registration-bg.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 28px;
-    padding: 180px 60px 60px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.registration-form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.form-row {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.paired-fields {
-    flex-direction: row;
-    gap: 40px;
-}
-
-.form-group {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.form-group.full-width {
-    flex: 0 0 100%;
-}
-
-.form-group label {
-    font-family: 'Source Serif Pro';
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 40px;
-    color: #373B33;
-}
-
-.form-group input,
-.form-group select {
-    padding: 15px 20px;
-    border: 1px solid #A3A29E;
-    border-radius: 19px;
-    font-size: 18px;
-    background-color: rgba(239, 239, 239, 0.8);
-}
-
-.form-group select {
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 20px;
-}
-
-.submit-row {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.submit-btn {
-    background-color: #7C8D7B;
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.registration-modal::before {
-    content: '';
-    position: absolute;
-    width: 773px;
-    height: 120px;
-    left: 0;
-    top: 0;
-    background: rgba(90, 98, 83, 0.55);
-    border-radius: 28px;
-    z-index: 1;
-}
-
 /* Адаптивность */
 @media (max-width: 800px) {
     .main-container {
@@ -358,6 +309,11 @@ body {
         width: 95%;
     }
     
+    .toggle-parameters {
+        width: 100%;
+        height: 120px;
+    }
+    
     .auth-buttons {
         flex-direction: column;
         width: 100%;
@@ -367,40 +323,7 @@ body {
         width: 100%;
     }
     
-    .registration-modal {
-        width: 95%;
-        height: auto;
-    }
-
-    .registration-header {
-        width: 100%;
-        left: 0;
-        padding: 0 20px;
-    }
-
-    .registration-header h2 {
-        font-size: 48px;
-        line-height: 1.2;
-    }
-
-    .registration-background {
-        width: 100%;
-        height: auto;
-        position: relative;
-        top: 0;
-        padding: 120px 20px 40px;
-    }
-
-    .paired-fields {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .registration-modal::before {
-        width: 100%;
-    }
-    
-    .modal-container {
-        padding: 20px;
+    .parameters-grid {
+        grid-template-columns: 1fr;
     }
 }
