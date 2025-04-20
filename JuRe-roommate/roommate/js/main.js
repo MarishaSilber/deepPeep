@@ -111,10 +111,12 @@ document.addEventListener('DOMContentLoaded', function() {
         this.textContent = '✓ Сохранено!';
         this.style.backgroundColor = '#5a8d5a';
         
+        /*тут была Ju .начало*/
         setTimeout(() => {
-            this.textContent = 'Сохранить параметры';
-            this.style.backgroundColor = 'var(--color-primary)';
-        }, 2000);
+            searchParameters.classList.remove('active');
+            toggleParamsBtn.classList.remove('active');
+        }, 2000); // Закроется через 2 секунды
+        /*тут была Ju .конец*/
     });
     
     // Отправляем данные на сервер
