@@ -1,4 +1,3 @@
-/* main.js */
 document.addEventListener('DOMContentLoaded', function() {
     // Элементы DOM
     const searchBtn = document.getElementById('searchBtn');
@@ -8,19 +7,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const paramsGrid = document.getElementById('parametersGrid');
     const saveSearchParamsBtn = document.getElementById('saveSearchParams');
     
+    // Модальные окна
+    const loginBtn = document.getElementById('loginBtn');
+    const registerBtn = document.getElementById('registerBtn');
+    const loginModal = document.getElementById('loginModal');
+    const registerModal = document.getElementById('registerModal');
+    const closeLogin = document.getElementById('closeLogin');
+    const closeRegister = document.getElementById('closeRegister');
+    
     // Параметры для поиска (шкала 0-10)
     const searchParams = [
         { id: 'cleanliness', name: 'Чистоплотность', min: 0, max: 10, step: 1, value: 5 },
-        { id: 'noise', name: 'Отношение к шуму', min: 0, max: 10, step: 1, value: 5 },
-        { id: 'smoking', name: 'Отношение к курению', min: 0, max: 10, step: 1, value: 5 },
-        { id: 'sociability', name: 'Общительность', min: 0, max: 10, step: 1, value: 5 },
-        { id: 'pets', name: 'Животные', min: 0, max: 10, step: 1, value: 5 },
-        { id: 'myGuests', name: 'Мои гости', min: 0, max: 10, step: 1, value: 5 },
-        { id: 'neighborGuests', name: 'Гости соседа', min: 0, max: 10, step: 1, value: 5 },
-        { id: 'sharedPurchases', name: 'Общие покупки', min: 0, max: 10, step: 1, value: 5 },
-        { id: 'cleaning', name: 'Уборка общих зон', min: 0, max: 10, step: 1, value: 5 },
-        { id: 'activities', name: 'Активности', min: 0, max: 10, step: 1, value: 5 },
-        { id: 'hobbies', name: 'Хобби', min: 0, max: 10, step: 1, value: 5 }
+        // ... остальные параметры ...
     ];
     
     // Загружаем сохраненные данные
@@ -28,10 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const savedAbout = localStorage.getItem('roommate_about');
         const savedParams = localStorage.getItem('roommate_search_params');
         
-        if (savedAbout) {
-            aboutText.value = savedAbout;
-        }
-        
+        if (savedAbout) aboutText.value = savedAbout;
         if (savedParams) {
             const parsedParams = JSON.parse(savedParams);
             searchParams.forEach(param => {
@@ -67,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             paramsGrid.appendChild(paramItem);
             
-            // Обработчик изменения значения
             const rangeInput = paramItem.querySelector('input[type="range"]');
             const valueSpan = paramItem.querySelector('.parameter-value');
             
@@ -75,13 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const value = parseInt(this.value);
                 valueSpan.textContent = value;
                 param.value = value;
-                
-                // Обновляем градиент фона
                 const percent = (value / 10) * 100;
                 this.style.background = `linear-gradient(to right, var(--color-primary) 0%, var(--color-primary) ${percent}%, var(--color-light) ${percent}%, var(--color-light) 100%)`;
             });
             
-            // Инициализируем градиент
             const percent = (param.value / 10) * 100;
             rangeInput.style.background = `linear-gradient(to right, var(--color-primary) 0%, var(--color-primary) ${percent}%, var(--color-light) ${percent}%, var(--color-light) 100%)`;
         });
@@ -107,24 +98,19 @@ document.addEventListener('DOMContentLoaded', function() {
         
         localStorage.setItem('roommate_search_params', JSON.stringify(paramsToSave));
         
-        // Анимация успешного сохранения
         this.textContent = '✓ Сохранено!';
         this.style.backgroundColor = '#5a8d5a';
         
-        /*тут была Ju .начало*/
         setTimeout(() => {
             searchParameters.classList.remove('active');
             toggleParamsBtn.classList.remove('active');
-        }, 2000); // Закроется через 2 секунды
-        /*тут была Ju .конец*/
+        }, 2000);
     });
     
     // Отправляем данные на сервер
     searchBtn.addEventListener('click', function() {
-        // Сохраняем описание
         localStorage.setItem('roommate_about', aboutText.value);
         
-        // Собираем все данные
         const formData = {
             about: aboutText.value,
             searchParams: {}
@@ -134,154 +120,91 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.searchParams[param.id] = param.value;
         });
         
-        // Здесь должна быть отправка данных на сервер
         console.log('Данные для отправки:', formData);
         
-        // Эффект успешного сохранения
         this.classList.add('success-pulse');
         setTimeout(() => {
             this.classList.remove('success-pulse');
         }, 1000);
     });
     
-    // Инициализация
-    loadSavedData();
-    
     // Обработчики модальных окон
-    const loginBtn = document.getElementById('loginBtn');
-    const registerBtn = document.getElementById('registerBtn');
-    const loginModal = document.getElementById('loginModal');
-    const closeLogin = document.getElementById('closeLogin');
-    
-    loginBtn.addEventListener('click', () => {
-        loginModal.style.display = 'flex';
-    });
-    
-    closeLogin.addEventListener('click', () => {
-        loginModal.style.display = 'none';
-    });
+    loginBtn.addEventListener('click', () => loginModal.style.display = 'flex');
+    registerBtn.addEventListener('click', () => registerModal.style.display = 'flex');
+    closeLogin.addEventListener('click', () => loginModal.style.display = 'none');
+    closeRegister.addEventListener('click', () => registerModal.style.display = 'none');
     
     window.addEventListener('click', (e) => {
-        if (e.target === loginModal) {
-            loginModal.style.display = 'none';
-        }
+        if (e.target === loginModal) loginModal.style.display = 'none';
+        if (e.target === registerModal) registerModal.style.display = 'none';
     });
-});
-
-
-
-// 1. Сначала добавим модальное окно регистрации в HTML через JS (если его нет в HTML)
-document.addEventListener('DOMContentLoaded', function() {
-    // Проверяем, есть ли уже модальное окно регистрации
-    if (!document.getElementById('registerModal')) {
-        const registerModalHTML = `
-        <div class="modal-overlay" id="registerModal">
-            <div class="modal-container slide-up">
-                <div class="modal-header">
-                    <h2>Регистрация</h2>
-                    <span class="close-modal" id="closeRegister">&times;</span>
-                </div>
-                <form class="modal-form" id="registerForm">
-                    <div class="form-group">
-                        <input type="text" id="regName" placeholder="Имя" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="regEmail" placeholder="E-mail" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" id="regPassword" placeholder="Пароль" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" id="regPasswordConfirm" placeholder="Повторите пароль" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="regCity" placeholder="Город">
-                    </div>
-                    <div class="form-group">
-                        <input type="number" id="regAge" placeholder="Возраст" min="18" max="99">
-                    </div>
-                    <button type="submit" class="submit-btn">Зарегистрироваться</button>
-                </form>
-            </div>
-        </div>
-        `;
-        
-        document.body.insertAdjacentHTML('beforeend', registerModalHTML);
-    }
-
-    // 2. Обработчики для открытия/закрытия модального окна регистрации
-    const registerBtn = document.getElementById('registerBtn');
-    const registerModal = document.getElementById('registerModal');
-    const closeRegister = document.getElementById('closeRegister');
-
-    if (registerBtn && registerModal) {
-        registerBtn.addEventListener('click', function() {
-            registerModal.style.display = 'flex';
-        });
-    }
-
-    if (closeRegister) {
-        closeRegister.addEventListener('click', function() {
-            registerModal.style.display = 'none';
-        });
-    }
-
-    // 3. Обработчик отправки формы регистрации
+    
+    // Обработчик формы регистрации
     const registerForm = document.getElementById('registerForm');
     if (registerForm) {
         registerForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Получаем данные из формы
+            const submitBtn = registerForm.querySelector('.submit-btn');
             const userData = {
-                name: document.getElementById('regName').value,
-                email: document.getElementById('regEmail').value,
+                name: document.getElementById('regName').value.trim(),
+                email: document.getElementById('regEmail').value.trim(),
                 password: document.getElementById('regPassword').value,
-                city: document.getElementById('regCity').value,
+                city: document.getElementById('regCity').value.trim(),
                 age: document.getElementById('regAge').value,
-                about: document.getElementById('aboutText').value // добавляем текст из секции "О себе"
+                about: aboutText.value.trim()
             };
             
-            // Проверяем совпадение паролей
             const passwordConfirm = document.getElementById('regPasswordConfirm').value;
+            
+            // Валидация
             if (userData.password !== passwordConfirm) {
                 alert('Пароли не совпадают!');
                 return;
             }
             
-            // Отправляем данные на сервер
-            sendRegistrationData(userData);
+            if (userData.password.length < 6) {
+                alert('Пароль должен содержать минимум 6 символов');
+                return;
+            }
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+            
+            sendRegistrationData(userData)
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Зарегистрироваться';
+                });
         });
     }
-});
-
-// 4. Функция для отправки данных на сервер
-function sendRegistrationData(userData) {
-    // URL вашего Python-сервера
-    const apiUrl = 'http://KIRILL-ADD.com/api/register';
     
-    fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData)
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Ошибка сети');
+    // Функция отправки данных
+    async function sendRegistrationData(userData) {
+        try {
+            const response = await fetch('http://localhost:5000/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userData)
+            });
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Ошибка сервера');
+            }
+            
+            const data = await response.json();
+            alert('Регистрация прошла успешно!');
+            registerModal.style.display = 'none';
+            
+        } catch (error) {
+            console.error('Ошибка:', error);
+            alert('Ошибка регистрации: ' + (error.message || 'Проверьте подключение'));
         }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Успешная регистрация:', data);
-        // Закрываем модальное окно после успешной регистрации
-        document.getElementById('registerModal').style.display = 'none';
-        // Можно показать сообщение об успехе
-        alert('Регистрация прошла успешно!');
-    })
-    .catch(error => {
-        console.error('Ошибка:', error);
-        alert('Произошла ошибка при регистрации: ' + error.message);
-    });
-}
+    }
+    
+    // Инициализация
+    loadSavedData();
+});
