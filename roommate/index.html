@@ -20,7 +20,7 @@
             
             <section class="about-section slide-up">
                 <h3>О себе</h3>
-                <textarea id="aboutText" maxlength="3000" placeholder="Введи описание себя и как выглядит твой идеальный сосед:)"></textarea>
+                <textarea id="aboutText" maxlength="3000" placeholder="Введи описание себя и как выглядит твой идеальный соседа:)"></textarea>
             </section>
 
             <div class="auth-buttons">
@@ -55,76 +55,48 @@
             </div>
             <form class="modal-form" id="loginForm">
                 <div class="form-group">
-                    <input type="email" placeholder="E-mail" required>
+                    <input type="email" id="loginEmail" placeholder="E-mail" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="Пароль" required>
+                    <input type="password" id="loginPassword" placeholder="Пароль" required>
                 </div>
-                <button type="submit" class="submit-btn">Отправить</button>
+                <button type="submit" class="submit-btn">Войти</button>
             </form>
         </div>
     </div>
 
     <!-- Модальное окно регистрации -->
     <div class="modal-overlay" id="registerModal">
-        <div class="modal-container">
-            <div class="registration-modal">
-                <div class="registration-header">
-                    <h2>Регистрация</h2>
-                </div>
-                
-                <div class="registration-background">
-                    <form class="registration-form">
-                        <div class="form-row">
-                            <div class="form-group full-width">
-                                <label>ФИО</label>
-                                <input type="text" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row paired-fields">
-                            <div class="form-group">
-                                <label>Пол</label>
-                                <select required>
-                                    <option value="" disabled selected>Выберите</option>
-                                    <option value="male">Мужской</option>
-                                    <option value="female">Женский</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Возраст</label>
-                                <input type="number" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group full-width">
-                                <label>Учебное заведение</label>
-                                <input type="text" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group full-width">
-                                <label>E-mail</label>
-                                <input type="email" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group full-width">
-                                <label>Пароль</label>
-                                <input type="password" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row submit-row">
-                            <button type="submit" class="submit-btn">Отправить</button>
-                        </div>
-                    </form>
-                </div>
+        <div class="modal-container slide-up">
+            <div class="modal-header">
+                <h2>Регистрация</h2>
+                <span class="close-modal" id="closeRegister">&times;</span>
             </div>
+            <form class="modal-form" id="registerForm">
+                <div class="form-group">
+                    <input type="text" id="regName" placeholder="Имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="regEmail" placeholder="E-mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="regPassword" placeholder="Пароль" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="regPasswordConfirm" placeholder="Повторите пароль" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="regCity" placeholder="Город">
+                </div>
+                <div class="form-group">
+                    <input type="number" id="regAge" placeholder="Возраст" min="18" max="99">
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span id="regBtnText">Зарегистрироваться</span>
+                    <div id="regSpinner" class="spinner hidden"></div>
+                </button>
+                <div id="regError" class="error-message hidden"></div>
+            </form>
         </div>
     </div>
 
